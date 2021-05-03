@@ -1,14 +1,19 @@
 # Custom Select Menu Component
 
 ## Quick Links:
-- [How to run, build and test project?](#scripts)
 - [Quick Preview](#quick-preview)
+- [How to run, build and test this project?](#scripts)
 - [Usage](#usage)
 - [API](#api)
 
 ---
 
-## How to run, build and test project?
+## #Quick Preview
+![Email table UI](custom_select_menu_demo.gif)
+
+---
+
+## How to run, build and test this project?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -28,11 +33,6 @@ Launches the test runner in the interactive watch mode.
 `npm run build`
 
 Builds the app for production to the `build` folder.
-
----
-
-## #Quick Preview
-![Email table UI](custom_select_menu_demo.gif)
 
 ---
 
