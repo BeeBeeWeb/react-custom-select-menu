@@ -1,0 +1,75 @@
+@import "./select-menu.variables.scss";
+
+.light {
+    .select-box {
+        border: 1px solid $border-light;
+        background: $background-light;
+
+        .selected-text {
+            color: $text-light;
+        }
+
+        .placeholder {
+            color: $text-placeholder-light;
+        }
+    }
+    .dropdown {
+        background: $background-light;
+        border: 1px solid $border-light;
+
+        .option-group {
+            border-bottom: 2px solid $border-light;
+
+            .option {
+                color: $text-light;
+                border-bottom: 1px solid $border-light;
+            }
+
+            .option.selected-option {
+                background: $color-primary;
+                color: $text-selected;
+            }
+        }
+
+        .option:hover:not(.option.selected-option) {
+            background: $hover-light;
+        }
+    }
+}
+
+.dark {
+    .select-box {
+        border: 1px solid $border-dark;
+        background: $background-dark;
+
+        .selected-text {
+            color: $text-dark;
+        }
+
+        .placeholder {
+            color: $text-placeholder-dark;
+        }
+    }
+    .dropdown {
+        background: $background-dark;
+        border: 1px solid $border-dark;
+
+        .option-group {
+            border-bottom: 2px solid $border-dark;
+
+            .option {
+                color: $text-dark;
+                border-bottom: 1px solid $border-dark;
+            }
+
+            .option.selected-option {
+                background: $color-primary;
+                color: $text-selected;
+            }
+        }
+
+        .option:hover {
+            background: $hover-dark;
+        }
+    }
+}

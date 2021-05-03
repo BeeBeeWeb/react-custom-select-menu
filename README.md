@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# Custom Select Menu Component
+
+### Quick Links:
+- [How to run, build and test project?](#scripts)
+- [Quick GIF Preview](#quick-preview)
+- [Online Demo](#online-demo)
+- [Usage](#usage)
+- [API](#api)
+
+---
+
+## How to run, build and test project?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## #Scripts
 
 In the project directory, you can run:
 
@@ -11,60 +22,117 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## #Quick Preview
+![Email table UI](custom_select_menu_demo.gif)
 
-### `npm run eject`
+----
+## #[Online Demo](http://stackshare.io/hennge)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## #Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+import SelectMenu from './components/select-menu/select-menu.component';
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+// simple select menu
+<SelectMenu
+    options={OPTIONS}
+    theme='light'
+    type="simple"
+    placeholder='Select Menu'
+    selected={selectedValue}
+    onChange={onSelectValue} />
 
-## Learn More
+// extended select menu
+<SelectMenu
+    options={OPTIONS_EXTENDED}
+    theme='light'
+    type="extended"
+    placeholder='Select Menu'
+    selected={{ name: 'Bartik', value: 4 }} />
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The shape array of objects for `OPTIONS` should be as follows.
+### Simple Options Object
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+const OPTIONS = [
+    {
+        name: 'Group 1',
+        items: [
+            { name: 'Hopper', value: 1 },
+            { name: 'Holberton', value: 2 }
+        ],
+        id: 1
+    },
+    {
+        name: 'Group 2',
+        items: [
+            { name: 'Antonelli', value: 3 },
+            { name: 'Bartik', value: 4 },
+            { name: 'Teitelbaum', value: 5 }
+        ],
+        id: 2
+    }
+];
+```
+### Extended Options Object
 
-### Code Splitting
+```javascript
+const OPTIONS_EXTENDED = [
+  {
+    name: 'Group 1',
+    items: [
+      { name: 'Hopper', value: 1, info: 'info text' },
+      { name: 'Holberton', value: 2, info: 'info text' }
+    ],
+    id: 1
+  },
+  {
+    name: 'Group 2',
+    items: [
+      { name: 'Antonelli', value: 3, info: 'info text' },
+      { name: 'Bartik', value: 4, info: 'info text' },
+      { name: 'Teitelbaum', value: 5, info: 'info text' }
+    ],
+    id: 2
+  }
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## #API
+| prop          | type     | default  | isRequired | description                                                                                                               |
+|---------------|----------|----------|------------|---------------------------------------------------------------------------------------------------------------------------|
+| `options`     | `array`  | -        | true       | Please follow the array object shape as defined above for `OPTIONS`                                                       |
+| `selected`    | `object` | -        | false      | You can provide selected value.  e.g `{ name: 'Bartik', value: 4}`                                                        |
+| `placeholder` | `string` | 'Select' | false      | You can provide a string as placeholder to be shown in select box. It will be replaced by selected value after selection. |
+| `theme`       | `string` | 'light'  | false      | Possible values: `'light' \|\| 'dark'`                                                                                    |
+| `type`        | `string` | 'normal' | false      | Possible values: `'normal' \|\| 'extended'`                                                                               |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Callback Prop
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`onChange` : On values change callback, returns selected value object
 
-### Advanced Configuration
+### Selected Value
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The shape object for `selected` should be as follows.
 
-### Deployment
+`selected={{ name: 'Bartik', value: 4 }}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

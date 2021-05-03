@@ -1,0 +1,108 @@
+@import "./select-menu.variables.scss";
+@import "./select-menu.theme.scss";
+
+* {
+    font-family: $font-stack;
+}
+
+%text-small {
+    font-size: $font-size-small;
+}
+
+%text-large {
+    font-size: $font-size-large;
+}
+
+.adjust-select-menu {
+    position: relative;
+
+    .select-box {
+        cursor: pointer;
+        width: 105px;
+        height: 32px;
+        border-radius: $s-5;
+        padding: $s-5 $s-10 $s-5 $s-15;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        * {
+            pointer-events: none;
+        }
+
+        .selected-text {
+            @extend %text-large;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            margin-right: $s-15;
+        }
+
+        .placeholder {
+            @extend %text-small;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .arrow-wrap {
+            display: flex;
+
+            .arrow {
+                border: 1px solid $border-dark;
+                border-width: 0 1px 1px 0;
+                display: inline-block;
+                padding: 2px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+        }
+
+    }
+
+    .dropdown {
+        border-radius: $s-5;
+        // margin-top: $s-5;
+        box-shadow: 0 2px 8px 0 $shadow;
+        display: inline-block;
+        max-width: 300px;
+        position: absolute;
+        top: 36px;
+        left: 0;
+        z-index: 9999;
+
+        .option-group {
+            .option {
+                cursor: pointer;
+                @extend %text-large;
+                padding: $s-5 $s-20 $s-5 $s-15;
+                margin: $s-5 0;
+                display: flex;
+
+                .check-icon {
+                    margin-right: $s-15;
+                    visibility: hidden;
+                }
+        
+                .info-text {
+                    @extend %text-small;
+                }
+            }
+
+            .option.selected-option {
+                background: #00a3be;
+                color: #fff;
+
+                .check-icon {
+                    visibility: visible;
+                }
+            }
+        }
+
+        .option-group:last-child {
+            border: none;
+        }
+    }
+}
+

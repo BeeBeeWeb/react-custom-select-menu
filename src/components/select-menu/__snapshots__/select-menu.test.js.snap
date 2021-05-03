@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectMenu component matches the snapshot 1`] = `
+<div
+  className="adjust-select-menu light"
+>
+  <div
+    className="select-box"
+    onClick={[Function]}
+  >
+    <span
+      className="placeholder"
+    >
+      Select
+    </span>
+    <span
+      className="arrow-wrap"
+    >
+      <span
+        className="arrow"
+      />
+    </span>
+  </div>
+</div>
+`;
