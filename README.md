@@ -47,8 +47,8 @@ import SelectMenu from './components/select-menu/select-menu.component';
     theme='light'
     type="simple"
     placeholder='Select Menu'
-    selected={selectedValue}
-    onChange={{ name: 'Bartik', value: 4 }} />
+    selected={{ name: 'Bartik', value: 4 }}
+    onChange={onSelectValue} />
 
 // extended select menu
 <SelectMenu
