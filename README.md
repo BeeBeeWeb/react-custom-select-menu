@@ -56,7 +56,7 @@ import SelectMenu from './components/select-menu/select-menu.component';
     type="extended" />
 ```
 
-The shape array of objects for `OPTIONS` should be as follows.
+The shape of array of objects for `OPTIONS` should be as follows.
 ### Simple Options Object
 
 ```javascript
