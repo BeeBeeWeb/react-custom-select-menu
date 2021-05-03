@@ -1,9 +1,8 @@
 # Custom Select Menu Component
 
-### Quick Links:
+## Quick Links:
 - [How to run, build and test project?](#scripts)
-- [Quick GIF Preview](#quick-preview)
-- [Online Demo](#online-demo)
+- [Quick Preview](#quick-preview)
 - [Usage](#usage)
 - [API](#api)
 
@@ -17,16 +16,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+ `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
+`npm test`
 
 Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+`npm run build`
 
 Builds the app for production to the `build` folder.
 
@@ -34,9 +33,6 @@ Builds the app for production to the `build` folder.
 
 ## #Quick Preview
 ![Email table UI](custom_select_menu_demo.gif)
-
-----
-## #[Online Demo](http://stackshare.io/hennge)
 
 ---
 
@@ -52,15 +48,12 @@ import SelectMenu from './components/select-menu/select-menu.component';
     type="simple"
     placeholder='Select Menu'
     selected={selectedValue}
-    onChange={onSelectValue} />
+    onChange={{ name: 'Bartik', value: 4 }} />
 
 // extended select menu
 <SelectMenu
     options={OPTIONS_EXTENDED}
-    theme='light'
-    type="extended"
-    placeholder='Select Menu'
-    selected={{ name: 'Bartik', value: 4 }} />
+    type="extended" />
 ```
 
 The shape array of objects for `OPTIONS` should be as follows.
@@ -114,6 +107,8 @@ const OPTIONS_EXTENDED = [
 ---
 
 ## #API
+### Props
+
 | prop          | type     | default  | isRequired | description                                                                                                               |
 |---------------|----------|----------|------------|---------------------------------------------------------------------------------------------------------------------------|
 | `options`     | `array`  | -        | true       | Please follow the array object shape as defined above for `OPTIONS`                                                       |
