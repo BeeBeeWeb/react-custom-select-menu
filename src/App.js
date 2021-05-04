@@ -57,7 +57,7 @@ function App() {
         <SelectMenu
           options={OPTIONS}
           theme='light'
-          type="simple"
+          type="normal"
           placeholder='Select Menu'
           selected={selectedValue}
           onChange={onSelectValue} />
