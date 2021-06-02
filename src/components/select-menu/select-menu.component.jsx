@@ -101,7 +101,7 @@ SelectMenu.propTypes = {
     }),
     placeholder: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark']),
-    type: PropTypes.oneOf(['simple', 'extended']),
+    type: PropTypes.oneOf(['normal', 'extended']),
     onChange: PropTypes.func
 }
 
