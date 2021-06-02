@@ -106,3 +106,12 @@
     }
 }
 
+.no-results {
+    @extend %text-small;
+    padding: $s-10;
+}
+
+.search-container {
+    padding: $s-10;
+}
+
